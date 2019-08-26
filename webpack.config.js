@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 //每次打包删除旧目录
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
-const webpack = require('webpack')
+const webpack = require("webpack");
 
 module.exports = {
   mode: "development",
@@ -13,10 +13,10 @@ module.exports = {
   // 建议：
   // dev: cheap-module-eval-source-map
   // pro: cheap-module-source-map
-  devtool: 'cheap-module-eval-source-map',
+  devtool: "cheap-module-eval-source-map",
   //多入口
   entry: {
-    app: "./src/main.js",
+    app: "./src/main.js"
     //sub: "./src/main.js"
   },
   module: {
@@ -43,8 +43,8 @@ module.exports = {
             //importLoaders: @import引入的css需要使用后面几个loader，1-sass-loader,2-postcss-loader
             //modules: css在模块内有效
             options: {
-              importLoaders: 2
-              //modules: true
+              importLoaders: 2,
+              modules: true
             }
           },
           "sass-loader",
@@ -53,11 +53,12 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: [
-          "style-loader",
-          "css-loader",
-          "postcss-loader"
-        ]
+        use: ["style-loader", "css-loader", "postcss-loader"]
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: "babel-loader"
       }
     ]
   },
@@ -78,7 +79,7 @@ module.exports = {
     //如果要将输出文件放在专门的cdn上，需要配置publicPath
     //publicPath: 'http://cdn.com.cn',
     path: path.resolve(__dirname, "dist"),
-      //[name]占位
+    //[name]占位
     filename: "[name].js"
   },
   devServer: {
@@ -95,3 +96,21 @@ module.exports = {
     hotOnly: true
   }
 };
+
+
+  // babel 业务代码直接配置，需要在文件顶端import "@babel/polyfill";
+  // presets: [
+  //   [
+  //     "@babel/preset-env",
+  //     {
+  //       targets: {
+  //         edge: "17",
+  //         firefox: "60",
+  //         chrome: "67",
+  //         safari: "11.1"
+  //       },
+  //       useBuiltIns: "usage"
+  //     }
+  //   ]
+  // ]
+  // 如果写的是库，使用配置插件，不污染全局
