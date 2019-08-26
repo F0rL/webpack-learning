@@ -13,6 +13,7 @@
     "@babel/plugin-transform-runtime": "^7.5.5",
     "@babel/polyfill": "^7.4.4",
     "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
     "@babel/runtime": "^7.5.5",
     "@babel/runtime-corejs2": "^7.5.5",
     "autoprefixer": "^9.6.1",
@@ -40,5 +41,8 @@
   "bugs": {
     "url": "https://github.com/F0rL/webpack-learning/issues"
   },
-  "dependencies": {}
+  "dependencies": {
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  }
 }

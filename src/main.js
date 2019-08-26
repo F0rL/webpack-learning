@@ -1,8 +1,8 @@
-//import "@babel/polyfill";
+import "@babel/polyfill";
 
-const dom = document.createElement("h1");
-dom.innerText = "learning webpack";
-document.getElementById("app").appendChild(dom);
+// const dom = document.createElement("h1");
+// dom.innerText = "learning webpack";
+// document.getElementById("app").appendChild(dom);
 
 // import logo from "./asserts/logo.jpg";
 // import "./asserts/reset.scss";
@@ -37,8 +37,24 @@ document.getElementById("app").appendChild(dom);
 //   })
 // }
 
-const arr = [new Promise(() => {}), new Promise(() => {})];
+// babel使用
+// const arr = [new Promise(() => {}), new Promise(() => {})];
 
-arr.map(item => {
-  console.log(item);
-});
+// arr.map(item => {
+//   console.log(item);
+// });
+
+
+import React, { Component } from 'react'
+import ReactDOM from 'react-dom'
+class App extends Component {
+  render() {
+    return (
+      <div className="react">
+        hello React
+      </div>
+    )
+  }
+}
+
+ReactDOM.render(<App/>, document.getElementById('app'))

@@ -99,18 +99,29 @@ module.exports = {
 
 
   // babel 业务代码直接配置，需要在文件顶端import "@babel/polyfill";
-  // presets: [
+  // "presets": [
   //   [
   //     "@babel/preset-env",
   //     {
-  //       targets: {
-  //         edge: "17",
-  //         firefox: "60",
-  //         chrome: "67",
-  //         safari: "11.1"
+  //       "targets": {
+  //         "edge": "17",
+  //         "firefox": "60",
+  //         "chrome": "67",
+  //         "safari": "11.1"
   //       },
-  //       useBuiltIns: "usage"
+  //       "useBuiltIns": "usage"
   //     }
   //   ]
   // ]
   // 如果写的是库，使用配置插件，不污染全局
+  // "plugins": [
+  //   [
+  //     "@babel/plugin-transform-runtime",
+  //     {
+  //       "corejs": 2,
+  //       "helpers": true,
+  //       "regenerator": true,
+  //       "useESModules": false
+  //     }
+  //   ]
+  // ]
