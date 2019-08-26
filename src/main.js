@@ -1,4 +1,5 @@
-import "@babel/polyfill";
+//如果设置的是usage，可以省略下行
+//import "@babel/polyfill"; 
 
 // const dom = document.createElement("h1");
 // dom.innerText = "learning webpack";

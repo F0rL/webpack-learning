@@ -75,6 +75,10 @@ module.exports = {
     //文档 https://webpack.docschina.org/guides/hot-module-replacement/
     new webpack.HotModuleReplacementPlugin()
   ],
+  //tree shaking 去除没有使用的模块，production下自动存在下面的配置
+  // optimization: {
+  //   useExports: true
+  // },
   output: {
     //如果要将输出文件放在专门的cdn上，需要配置publicPath
     //publicPath: 'http://cdn.com.cn',
