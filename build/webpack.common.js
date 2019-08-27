@@ -1,7 +1,7 @@
-const path = require("path");
+//const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const webpack = require('webpack')
+const webpack = require("webpack");
 
 module.exports = {
   entry: {
@@ -25,7 +25,15 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: "babel-loader"
+        use: [
+          {
+            loader: "babel-loader"
+          },
+          //设置this指向window，但是如果在main里面有import会报错
+          // {
+          //   loader: "imports-loader?this=>window"
+          // }
+        ]
       }
     ]
   },
@@ -38,8 +46,8 @@ module.exports = {
     new CleanWebpackPlugin(),
     //自动引入
     new webpack.ProvidePlugin({
-      $: 'jquery',
-      _: 'lodash'
+      $: "jquery",
+      _: "lodash"
     })
   ],
   optimization: {

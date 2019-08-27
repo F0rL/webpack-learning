@@ -4,5 +4,7 @@ import ui from './jquery.ui'
 
 ui()
 const dom = $('<div>')
-dom.html(_.join(['kuma','forl'],'----'))
+dom.html(_.join(['kuma','loves', 'life'],'----'))
 $('#app').append(dom)
+
+console.log(this)
