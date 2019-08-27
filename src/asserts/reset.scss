@@ -4,12 +4,3 @@ body {
   margin: 0;
   padding: 0;
 }
-
-#app {
-  .logo {
-    width: 100px;
-  }
-  p:nth-child(2n+1) {
-    background-color: #ccc;
-  }
-}

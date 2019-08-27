@@ -4,7 +4,7 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
   entry: {
-    app: "./src/main.js"
+    main: "./src/main.js"
   },
   module: {
     rules: [
@@ -22,25 +22,6 @@ module.exports = {
         ]
       },
       {
-        test: /\.scss$/,
-        use: [
-          "style-loader",
-          {
-            loader: "css-loader",
-            options: {
-              importLoaders: 2,
-              modules: true
-            }
-          },
-          "sass-loader",
-          "postcss-loader"
-        ]
-      },
-      {
-        test: /\.css$/,
-        use: ["style-loader", "css-loader", "postcss-loader"]
-      },
-      {
         test: /\.js$/,
         exclude: /node_modules/,
         loader: "babel-loader"
@@ -56,6 +37,7 @@ module.exports = {
     new CleanWebpackPlugin()
   ],
   optimization: {
+    usedExports: true,
     //一般配置chunks all就可以了
     splitChunks: {
       //同步或者异步做分割
@@ -90,6 +72,7 @@ module.exports = {
   },
   output: {
     filename: "[name].js",
+    chunkFilename: '[name].chunk.js',
     path: path.resolve(__dirname, "../dist")
   }
 };

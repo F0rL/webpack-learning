@@ -41,7 +41,7 @@ module.exports = {
           {
             loader: "css-loader",
             //importLoaders: @import引入的css需要使用后面几个loader，1-sass-loader,2-postcss-loader
-            //modules: css在模块内有效
+            //modules: css当做模块
             options: {
               importLoaders: 2,
               modules: true
@@ -77,7 +77,7 @@ module.exports = {
   ],
   //tree shaking 去除没有使用的模块，production下自动存在下面的配置
   // optimization: {
-  //   useExports: true
+  //   usedExports: true
   // },
   output: {
     //如果要将输出文件放在专门的cdn上，需要配置publicPath
