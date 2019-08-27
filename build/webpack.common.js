@@ -56,34 +56,34 @@ module.exports = {
     new CleanWebpackPlugin()
   ],
   optimization: {
-    splitChunks: {
-      //同步或者异步做分割
-      chunks: "all",
-      //最小
-      minSize: 30000,
-      //最少使用次数
-      minChunks: 1,
-      maxAsyncRequests: 5,
-      maxInitialRequests: 3,
-      //组和文件之间连接符
-      automaticNameDelimiter: "~",
-      name: true,
-      cacheGroups: {
-        vendors: {
-          test: /[\\/]node_modules[\\/]/,
-          //条件符合优先级
-          priority: -10,
-          //filename: 'vendors.js'
-        },
-        default: {
-          minChunks: 2,
-          priority: -20,
-          //已经被打包过了就忽略
-          reuseExistingChunk: true,
-          //filename: 'common.js'
-        }
-      }
-    }
+    // splitChunks: {
+    //   //同步或者异步做分割
+    //   chunks: "all",
+    //   //最小
+    //   minSize: 30000,
+    //   //最少使用次数
+    //   minChunks: 1,
+    //   maxAsyncRequests: 5,
+    //   maxInitialRequests: 3,
+    //   //组和文件之间连接符
+    //   automaticNameDelimiter: "~",
+    //   name: true,
+    //   cacheGroups: {
+    //     vendors: {
+    //       test: /[\\/]node_modules[\\/]/,
+    //       //条件符合优先级
+    //       priority: -10,
+    //       //filename: 'vendors.js'
+    //     },
+    //     default: {
+    //       minChunks: 2,
+    //       priority: -20,
+    //       //已经被打包过了就忽略
+    //       reuseExistingChunk: true,
+    //       //filename: 'common.js'
+    //     }
+    //   }
+    // }
   },
   output: {
     filename: "[name].js",
