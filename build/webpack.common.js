@@ -4,8 +4,7 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
   entry: {
-    app: "./src/main.js",
-    lodash: "./src/lodash.js"
+    app: "./src/main.js"
   },
   module: {
     rules: [
@@ -56,6 +55,11 @@ module.exports = {
     }),
     new CleanWebpackPlugin()
   ],
+  optimization: {
+    splitChunks: {
+      chunks: 'all'
+    }
+  },
   output: {
     filename: "[name].js",
     path: path.resolve(__dirname, "../dist")
