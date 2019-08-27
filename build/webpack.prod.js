@@ -2,15 +2,19 @@ const merge = require('webpack-merge')
 const commonConfig = require('./webpack.common')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 const prodConfig = {
   mode: "production",
   devtool: "cheap-module-source-map",
+  optimization: {
+    minimizer: [new OptimizeCSSAssetsPlugin({})],
+  },
   plugins: [
     new BundleAnalyzerPlugin(),
     new MiniCssExtractPlugin({
       filename: '[name].css',
-      chunkFilename: '[id].css',
+      chunkFilename: '[name].chunk.css',
       ignoreOrder: false, // Enable to remove warnings about conflicting order
     }),
   ],
