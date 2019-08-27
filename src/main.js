@@ -1,7 +1,8 @@
 import './asserts/reset.scss'
 import './asserts/style.scss'
+import ui from './jquery.ui'
 
-const ele = document.createElement('p')
-ele.innerText = 'box more'
-ele.setAttribute('id', 'box')
-document.getElementById('app').appendChild(ele)
+ui()
+const dom = $('<div>')
+dom.html(_.join(['kuma','forl'],'----'))
+$('#app').append(dom)

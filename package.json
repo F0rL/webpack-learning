@@ -53,6 +53,7 @@
     "url": "https://github.com/F0rL/webpack-learning/issues"
   },
   "dependencies": {
+    "jquery": "^3.4.1",
     "lodash": "^4.17.15",
     "react": "^16.9.0",
     "react-dom": "^16.9.0"

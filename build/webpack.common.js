@@ -1,6 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const webpack = require('webpack')
 
 module.exports = {
   entry: {
@@ -34,7 +35,12 @@ module.exports = {
       template: "public/index.html",
       favicon: "public/favicon.ico"
     }),
-    new CleanWebpackPlugin()
+    new CleanWebpackPlugin(),
+    //自动引入
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      _: 'lodash'
+    })
   ],
   optimization: {
     usedExports: true,
