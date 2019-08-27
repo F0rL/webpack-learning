@@ -7,6 +7,7 @@
   "scripts": {
     "start": "webpack-dev-server --config ./build/webpack.dev.js",
     "build": "webpack --config ./build/webpack.prod.js",
+    "dev-build": "webpack --config ./build/webpack.dev.js",
     "watch": "webpack --watch"
   },
   "devDependencies": {
@@ -20,6 +21,7 @@
     "autoprefixer": "^9.6.1",
     "babel-loader": "^8.0.6",
     "clean-webpack-plugin": "^3.0.0",
+    "core-js": "3",
     "css-loader": "^3.2.0",
     "file-loader": "^4.2.0",
     "html-webpack-plugin": "^3.2.0",
@@ -44,6 +46,7 @@
     "url": "https://github.com/F0rL/webpack-learning/issues"
   },
   "dependencies": {
+    "lodash": "^4.17.15",
     "react": "^16.9.0",
     "react-dom": "^16.9.0"
   }

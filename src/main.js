@@ -1,1 +1,1 @@
-console.log(12)
+console.log(_.join(['a','b','c'],'***'))
