@@ -73,7 +73,7 @@ module.exports = {
     new CleanWebpackPlugin(),
     //配合 devServer webpack热更新HMR
     //文档 https://webpack.docschina.org/guides/hot-module-replacement/
-    new webpack.HotModuleReplacementPlugin()
+    //new webpack.HotModuleReplacementPlugin()
   ],
   //tree shaking 去除没有使用的模块，production下自动存在下面的配置
   // optimization: {
@@ -95,9 +95,9 @@ module.exports = {
     //端口
     port: 8080,
     //启用 webpack 的模块热替换特性
-    hot: true,
+    //hot: true,
     //模块热替换不刷新页面,例如只改变css/js而不刷新页面
-    hotOnly: true
+    //hotOnly: true
   }
 };
 

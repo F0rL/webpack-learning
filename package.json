@@ -5,8 +5,8 @@
   "main": "main.js",
   "sideEffects": false,
   "scripts": {
-    "start": "webpack-dev-server",
-    "build": "webpack",
+    "start": "webpack-dev-server --config ./build/webpack.dev.js",
+    "build": "webpack --config ./build/webpack.prod.js",
     "watch": "webpack --watch"
   },
   "devDependencies": {
@@ -30,7 +30,8 @@
     "url-loader": "^2.1.0",
     "webpack": "^4.39.2",
     "webpack-cli": "^3.3.7",
-    "webpack-dev-server": "^3.8.0"
+    "webpack-dev-server": "^3.8.0",
+    "webpack-merge": "^4.2.1"
   },
   "homepage": "https://github.com/F0rL/webpack-learning#readme",
   "repository": {
