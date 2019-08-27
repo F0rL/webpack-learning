@@ -1,4 +1,5 @@
 const merge = require('webpack-merge')
+const path = require('path')
 const commonConfig = require('./webpack.common')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -11,13 +12,18 @@ const prodConfig = {
     minimizer: [new OptimizeCSSAssetsPlugin({})],
   },
   plugins: [
-    new BundleAnalyzerPlugin(),
+    //new BundleAnalyzerPlugin(),
     new MiniCssExtractPlugin({
       filename: '[name].css',
       chunkFilename: '[name].chunk.css',
       ignoreOrder: false, // Enable to remove warnings about conflicting order
     }),
   ],
+  output: {
+    filename: "[name].[contenthash].js",
+    chunkFilename: '[name].[contenthash].chunk.js',
+    path: path.resolve(__dirname, "../dist")
+  },
   module: {
     rules: [
       {

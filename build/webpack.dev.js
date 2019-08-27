@@ -16,6 +16,11 @@ const devConfig = {
     port: 8080,
     hot: true
   },
+  output: {
+    filename: "[name].js",
+    chunkFilename: '[name].chunk.js',
+    path: path.resolve(__dirname, "../dist")
+  },
   module: {
     rules: [
       {
