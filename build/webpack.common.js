@@ -73,14 +73,14 @@ module.exports = {
           test: /[\\/]node_modules[\\/]/,
           //条件符合优先级
           priority: -10,
-          filename: 'vendors.js'
+          //filename: 'vendors.js'
         },
         default: {
           minChunks: 2,
           priority: -20,
           //已经被打包过了就忽略
           reuseExistingChunk: true,
-          filename: 'common.js'
+          //filename: 'common.js'
         }
       }
     }
